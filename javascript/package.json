@@ -1,0 +1,16 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "http-server . -p 3357"
+  },
+  "author": "Beatport Engineering",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^4.19.1",
+    "http-server": "^0.11.1",
+    "mocha": "^5.1.0"
+  }
+}

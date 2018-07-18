@@ -17,7 +17,7 @@ let math = {
   raise(num, num2) {
     return num ** num2;
   }
-}
+};
 
 describe('math', () => {
   it('adds', () => expect(math.add(1, 2)).to.equal(3));

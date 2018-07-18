@@ -4,7 +4,15 @@
  * @param {String} str
  * @returns {String} 
  */
-const snakeToProperCase = (str) => str;
+const capitalizeWords = (str) => {
+  return str.replace(/\w\S*/g, function(txt){
+      return txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase();
+  });
+};
+
+const snakeToProperCase = (str) => {
+  return capitalizeWords(str.replace(/_/g, " ")).replace(/\s\s+/g, ' ').trim();
+};
 
 describe('snakeToProperCase', () => {
   it('converts move_in_date to Move In Date', () => {

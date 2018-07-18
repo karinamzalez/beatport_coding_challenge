@@ -18,6 +18,11 @@ duplicates, the first result found should be returned.
 
 """
 
-
-def tree_traverse(tree, key):
-    pass
+def tree_traverse(tree, input_key):
+    for key, value in tree.items():
+        if input_key == key:
+             return value
+        elif isinstance(value, dict):
+            value = tree_traverse(value, input_key)
+            if value is not None: 
+                return value

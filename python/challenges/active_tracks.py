@@ -27,6 +27,11 @@ The list may contain duplicate tracks.
 
 """
 
-
 def active_tracks(tracks):
-    pass
+    active_ids = []
+    for obj in tracks: 
+        active_ids.append(obj['id']) if obj['active'] else ''
+    my_set = set(active_ids)
+    unique_ids = list(my_set)
+    return unique_ids
+

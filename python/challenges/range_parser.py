@@ -11,6 +11,19 @@ from a Python slice style string with 1 <= N <= 10.
 
 """
 
-
 def range_parser(s):
-    pass
+    a = range(0, 11)
+    min_max = s.split(':')
+    if len(min_max) > 2:
+        return 'Only two values allowed!'
+    min = min_max[0] or '1'
+    max = min
+    if len(min_max) > 1:
+        max = min_max[1] or '10'
+    if min.isdigit() and max.isdigit():
+        min = int(min)
+        max = int(max) + 1
+    else: 
+        return 'Range values must be integers!'
+    return a[slice(min, max)]
+

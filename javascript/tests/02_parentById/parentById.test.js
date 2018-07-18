@@ -6,9 +6,10 @@
  * @param {String} id
  * @returns {HTMLElement|undefined}
  */
+
 const parentById = (el, id) => {
   const parent = el.closest(`#${id}`);
-  return parent.id === id ? undefined : parent;
+  return parent.id === el.id ? undefined : parent;
 };
 
 describe('parentById', () => {

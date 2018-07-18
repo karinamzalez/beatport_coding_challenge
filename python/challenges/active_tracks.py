@@ -27,7 +27,6 @@ The list may contain duplicate tracks.
 
 """
 
-
 def active_tracks(tracks):
     active_ids = []
     for obj in tracks: 

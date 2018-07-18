@@ -7,8 +7,8 @@
  * @returns {HTMLElement|undefined}
  */
 const parentById = (el, id) => {
-  // complete the function
-  return null;
+  const parent = el.closest(`#${id}`);
+  return parent.id === id ? undefined : parent;
 };
 
 describe('parentById', () => {

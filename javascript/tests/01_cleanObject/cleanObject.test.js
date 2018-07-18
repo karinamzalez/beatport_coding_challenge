@@ -5,7 +5,9 @@
  * @returns {Object}
  */
 const cleanObject = (object) => {
-  // complete the function
+  // do this without mutating original
+  Object.keys(object).forEach(key => !object[key] && object[key] !== false && delete object[key]);
+  return object;
 };
 
 describe('cleanObject', () => {

@@ -1,7 +1,23 @@
 /**
  * Provide some math functions
  */
-let math; // implement math object
+let math = {
+  add(num, num2) {
+    return num + num2;
+  },
+  subtract(num, num2) {
+    return num - num2;
+  },
+  multiply(num, num2) {
+    return num * num2;
+  }, 
+  divide(num, num2) {
+    return num / num2;
+  },
+  raise(num, num2) {
+    return num ** num2;
+  }
+};
 
 describe('math', () => {
   it('adds', () => expect(math.add(1, 2)).to.equal(3));

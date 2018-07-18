@@ -28,7 +28,29 @@ const expectedOutput = {
  * @returns {Object}
  */
 
-const groupByDepartment = (input) => {};
+const groupByDepartment = (input) => {
+  // list of unique departments
+  const departments = input.map(person => person.group).filter((x, i, a) => a.indexOf(x) == i);
+  let finalObj = departments.reduce((obj, department) => {
+    //iterate through all ppl in department
+    let pplInDepartment = input.reduce((arr, person) => {
+      let name = person.first + ' ' + person.last;
+      //if nameOrder is reverse, then reverse order of name
+      name = person.nameOrder ? name.split(' ').reverse().join(' ') : name;
+      //if person's group is current dept, then push name into accumulator array 
+      if (person.group === department) {
+        arr.push({name});
+      }
+      //return accumulated array of names for current department
+      return arr;
+    }, []);
+    //set current department as key for pplInDepartment
+    obj[department] = pplInDepartment;
+    //return accumulated department/pplInDepartment key/value pairs
+    return obj;
+  }, {});
+  return finalObj;
+};
 
 describe('groupByDepartment', () => {
   it('converts array input to the expected output', () => {
